@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BrightPath AI — Learning that actually gets you</title>
+<meta name="description" content="BrightPath AI pairs guided learning journeys with Lumi, a personal AI tutor, so you always know your next step.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ================= NAV ================= -->
+  <header class="site-header">
+    <div class="nav-row">
+      <div class="brand">
+        <div class="brand-mark">
+          <lumi-mascot-3d mode="mark" variant="balanced" size="30" halo="off"></lumi-mascot-3d>
+        </div>
+        <span class="brand-name">BrightPath <span>AI</span></span>
+      </div>
+      <nav class="nav-links">
+        <a href="#journeys">Journeys</a>
+        <a href="#ai-tutor">AI Tutor</a>
+        <a href="#courses">Courses</a>
+        <a href="#parents">For Parents &amp; Teachers</a>
+        <a href="#pricing">Pricing</a>
+      </nav>
+      <div class="nav-cta">
+        <a href="#" class="login-link">Log in</a>
+        <a href="#" class="btn-nav">Start Learning</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" data-lumi="happy" data-lumi-msg="Hi! I'm Lumi — scroll with me ✦">
+    <div class="hero-blob hero-blob-a"></div>
+    <div class="hero-blob hero-blob-b"></div>
+
+    <div class="hero-grid">
+      <div>
+        <div class="pill-badge hero-badge">
+          <div class="badge-mark">
+            <lumi-mascot-3d mode="mark" variant="balanced" size="22" halo="off"></lumi-mascot-3d>
+          </div>
+          <span class="badge-text">Meet Lumi — your AI learning companion</span>
+        </div>
+        <h1>Learning that actually gets&nbsp;you.</h1>
+        <p class="hero-sub">BrightPath AI pairs guided learning journeys with a personal AI tutor, so you always know your next step — and it doesn't feel like homework.</p>
+        <div class="hero-actions">
+          <a href="#" class="btn btn-dark">Start Learning →</a>
+          <a href="#courses" class="btn btn-outline">Explore Courses</a>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <div class="hero-stat-num">120+</div>
+            <div class="hero-stat-label">guided courses</div>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div>
+            <div class="hero-stat-num">40+</div>
+            <div class="hero-stat-label">countries learning</div>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div>
+            <div class="hero-stat-num">24/7</div>
+            <div class="hero-stat-label">AI tutor support</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-visual-card"></div>
+        <div class="hero-visual-stage">
+          <div id="lumi-hero-slot"></div>
+          <div class="lumi-hero-fallback">
+            <lumi-mascot-3d variant="balanced" expression="happy" size="340"></lumi-mascot-3d>
+          </div>
+        </div>
+        <div class="hero-card hero-card-streak">
+          <div class="streak-icon">🔥</div>
+          <div>
+            <div class="streak-label">Streak</div>
+            <div class="streak-value">12 days</div>
+          </div>
+        </div>
+        <div class="hero-card hero-card-quote">
+          <div class="quote-label">Lumi says</div>
+          <div class="quote-text">"Nice! You just unlocked <b>Budgeting Basics</b>. Want a hint to start?"</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TRUST STRIP ================= -->
+  <section class="trust">
+    <div class="trust-row">
+      <span class="trust-label">TRUSTED BY LEARNERS AND FAMILIES AT</span>
+      <div class="trust-logos">
+        <span>Northwind Academy</span>
+        <span>Riverbend High</span>
+        <span>Maple &amp; Co Families</span>
+        <span>Coastline Learners</span>
+        <span>Junction Prep</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LEARNING JOURNEYS ================= -->
+  <section id="journeys" class="journeys" data-lumi="thinking" data-lumi-msg="One clear step at a time…">
+    <div class="journeys-grid">
+      <div class="journeys-copy">
+        <span class="eyebrow">Learning journeys</span>
+        <h2 class="section-title">One clear path, not a pile of tabs.</h2>
+        <p>Every skill on BrightPath is broken into a journey — a sequence of bite-sized lessons, checkpoints, and quizzes that builds real momentum instead of overwhelm.</p>
+        <div class="journey-steps">
+          <div class="journey-step">
+            <div class="journey-step-icon" style="background:#F1EEFC;">🎯</div>
+            <div class="journey-step-label">Pick a goal — from AI literacy to public speaking</div>
+          </div>
+          <div class="journey-step">
+            <div class="journey-step-icon" style="background:#FFF1D6;">🧩</div>
+            <div class="journey-step-label">Follow bite-sized lessons, in order, at your pace</div>
+          </div>
+          <div class="journey-step">
+            <div class="journey-step-icon" style="background:#E6F7EE;">🏁</div>
+            <div class="journey-step-label">Hit checkpoints, quizzes, and real milestones</div>
+          </div>
+        </div>
+      </div>
+      <div class="journey-card">
+        <div class="journey-node">
+          <div class="journey-node-rail">
+            <div class="journey-node-mark" style="background:#6E5EF0;">✓</div>
+            <div class="journey-node-line"></div>
+          </div>
+          <div class="journey-node-body">
+            <div class="journey-node-tag">Module 01</div>
+            <div class="journey-node-title">What is AI, really?</div>
+          </div>
+        </div>
+        <div class="journey-node">
+          <div class="journey-node-rail">
+            <div class="journey-node-mark" style="background:#6E5EF0;">✓</div>
+            <div class="journey-node-line"></div>
+          </div>
+          <div class="journey-node-body">
+            <div class="journey-node-tag">Module 02</div>
+            <div class="journey-node-title">Prompting basics</div>
+          </div>
+        </div>
+        <div class="journey-node">
+          <div class="journey-node-rail">
+            <div class="journey-node-mark" style="background:#FF6F59;">3</div>
+            <div class="journey-node-line"></div>
+          </div>
+          <div class="journey-node-body">
+            <div class="journey-node-tag">Module 03</div>
+            <div class="journey-node-title">Spotting AI bias</div>
+          </div>
+        </div>
+        <div class="journey-node">
+          <div class="journey-node-rail">
+            <div class="journey-node-mark" style="background:#D8D2E8;">4</div>
+          </div>
+          <div class="journey-node-body">
+            <div class="journey-node-tag">Module 04</div>
+            <div class="journey-node-title">Build a mini AI project</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= AI TUTOR ================= -->
+  <section id="ai-tutor" data-lumi="explaining" data-lumi-msg="This is where I help you learn!">
+    <div class="tutor-card">
+      <div class="tutor-glow"></div>
+      <div class="tutor-copy">
+        <span class="eyebrow">Your AI tutor</span>
+        <h2 class="section-title">Lumi explains it until it clicks.</h2>
+        <p>Stuck on something? Lumi breaks it down simply, gives hints instead of answers, and adjusts to how you learn best — available anytime, in any lesson.</p>
+        <div class="tutor-features">
+          <div class="tutor-feature"><div class="tutor-feature-dot"></div><span>Explains concepts in plain, friendly language</span></div>
+          <div class="tutor-feature"><div class="tutor-feature-dot"></div><span>Gives hints first — answers only when you're really stuck</span></div>
+          <div class="tutor-feature"><div class="tutor-feature-dot"></div><span>Knows exactly which lesson you're on</span></div>
+          <div class="tutor-feature"><div class="tutor-feature-dot"></div><span>Adjusts tone and pace to how you're doing</span></div>
+        </div>
+      </div>
+      <div class="tutor-panel">
+        <div class="tutor-panel-head">
+          <div class="tutor-panel-avatar">
+            <lumi-mascot-3d mode="mark" variant="balanced" size="32" halo="off"></lumi-mascot-3d>
+          </div>
+          <div>
+            <div class="tutor-panel-name">Lumi · AI Tutor</div>
+            <div class="tutor-panel-status"><span class="dot"></span>Online</div>
+          </div>
+        </div>
+        <div class="chat-thread">
+          <div class="chat-bubble chat-bubble-user">I don't get compound interest 😩</div>
+          <div class="chat-bubble chat-bubble-bot">Think of it like a snowball 🌨️ — your money earns interest, then <i>that</i> interest earns interest too. Want to try it with a real number?</div>
+        </div>
+        <div class="quick-actions">
+          <div class="quick-action">Explain this simply</div>
+          <div class="quick-action">Give me a hint</div>
+          <div class="quick-action">Quiz me</div>
+          <div class="quick-action">Summarize this</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= INTERACTIVE LESSONS ================= -->
+  <section data-lumi="idle" data-lumi-msg="Learn by doing, not just watching">
+    <div class="section-heading-center">
+      <span class="eyebrow">Interactive lessons</span>
+      <h2 class="section-title">Built to do, not just watch.</h2>
+    </div>
+    <div class="lessons-grid">
+      <div class="lesson-card">
+        <div class="lesson-icon" style="background:#F1EEFC;">🎬</div>
+        <h3>Watch &amp; do</h3>
+        <p>Short videos paired with an in-the-moment activity, not a 20-minute lecture.</p>
+      </div>
+      <div class="lesson-card">
+        <div class="lesson-icon" style="background:#FFF1D6;">🧠</div>
+        <h3>Try it live</h3>
+        <p>Interactive exercises — sort, drag, build — so ideas stick through doing.</p>
+      </div>
+      <div class="lesson-card">
+        <div class="lesson-icon" style="background:#E6F7EE;">⚡</div>
+        <h3>Quick checks</h3>
+        <p>Fast knowledge checks after every lesson to lock in what you learned.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PARENTS & TEACHERS ================= -->
+  <section id="parents" data-lumi="supportive" data-lumi-msg="Grown-ups get friendly insights too">
+    <div class="parents-card">
+      <div>
+        <div class="parents-visual">
+          <lumi-mascot-3d variant="balanced" expression="idle" size="185"></lumi-mascot-3d>
+        </div>
+      </div>
+      <div class="parents-copy">
+        <span class="eyebrow">For parents &amp; teachers</span>
+        <h2 class="section-title section-title-sm">Full visibility, zero micromanaging.</h2>
+        <p>See progress, time spent, and quiz results in plain language — plus what Lumi has been helping with — without hovering over every lesson.</p>
+        <div class="parents-features">
+          <div class="parents-feature"><div class="parents-feature-check">✓</div><span>Weekly progress summary in plain language</span></div>
+          <div class="parents-feature"><div class="parents-feature-check">✓</div><span>See time spent, streaks, and quiz performance</span></div>
+          <div class="parents-feature"><div class="parents-feature-check">✓</div><span>Understand what the AI tutor has been helping with</span></div>
+          <div class="parents-feature"><div class="parents-feature-check">✓</div><span>Get suggested next steps, not just raw data</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= BENEFITS ================= -->
+  <section>
+    <div class="section-heading-center">
+      <span class="eyebrow">Why BrightPath</span>
+      <h2 class="section-title">Everything school skipped.</h2>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">🧭</div>
+        <div class="benefit-title">Guided, not overwhelming</div>
+        <div class="benefit-desc">One clear next step at all times, never a wall of options.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🤝</div>
+        <div class="benefit-title">Always-on support</div>
+        <div class="benefit-desc">Lumi is there at 2pm or 2am — no waiting for office hours.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🎮</div>
+        <div class="benefit-title">Genuinely motivating</div>
+        <div class="benefit-desc">XP, streaks, and milestones that reward showing up.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🌍</div>
+        <div class="benefit-title">Real-world skills</div>
+        <div class="benefit-desc">Money, AI, communication — the stuff school often skips.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= COURSES ================= -->
+  <section id="courses" data-lumi="hint" data-lumi-msg="So many paths to pick from…">
+    <div class="courses-head">
+      <div>
+        <span class="eyebrow">Sample courses</span>
+        <h2 class="section-title section-title-sm">Skills for the world you're growing into.</h2>
+      </div>
+      <a href="#">Browse full library →</a>
+    </div>
+    <div class="courses-grid">
+      <div class="course-card">
+        <div class="course-card-thumb" style="background:#EDE9FE;">🤖</div>
+        <div class="course-card-body">
+          <div class="course-category">AI &amp; Digital Literacy</div>
+          <div class="course-title">Prompting 101: Talk to AI Like a Pro</div>
+          <div class="course-meta"><span class="course-level">Beginner</span><span class="course-duration">2h 10m</span></div>
+          <div class="course-ai"><span>✦</span> AI-supported</div>
+        </div>
+      </div>
+      <div class="course-card">
+        <div class="course-card-thumb" style="background:#FFF1D6;">💰</div>
+        <div class="course-card-body">
+          <div class="course-category">Financial Literacy</div>
+          <div class="course-title">Budgeting Basics: Your First Paycheck</div>
+          <div class="course-meta"><span class="course-level">Beginner</span><span class="course-duration">1h 40m</span></div>
+          <div class="course-ai"><span>✦</span> AI-supported</div>
+        </div>
+      </div>
+      <div class="course-card">
+        <div class="course-card-thumb" style="background:#FFE4DC;">🚀</div>
+        <div class="course-card-body">
+          <div class="course-category">Entrepreneurship</div>
+          <div class="course-title">From Idea to Pitch in 5 Days</div>
+          <div class="course-meta"><span class="course-level">Intermediate</span><span class="course-duration">3h 05m</span></div>
+          <div class="course-ai"><span>✦</span> AI-supported</div>
+        </div>
+      </div>
+      <div class="course-card">
+        <div class="course-card-thumb" style="background:#E6F7EE;">🎨</div>
+        <div class="course-card-body">
+          <div class="course-category">Creativity</div>
+          <div class="course-title">Worldbuilding for Storytellers</div>
+          <div class="course-meta"><span class="course-level">Beginner</span><span class="course-duration">2h 20m</span></div>
+          <div class="course-ai"><span>✦</span> AI-supported</div>
+        </div>
+      </div>
+      <div class="course-card">
+        <div class="course-card-thumb" style="background:#EAF1FE;">🔍</div>
+        <div class="course-card-body">
+          <div class="course-category">Problem Solving</div>
+          <div class="course-title">Think Like a Detective</div>
+          <div class="course-meta"><span class="course-level">Intermediate</span><span class="course-duration">2h 45m</span></div>
+          <div class="course-ai"><span>✦</span> AI-supported</div>
+        </div>
+      </div>
+      <div class="course-card">
+        <div class="course-card-thumb" style="background:#E6F7EE;">🌱</div>
+        <div class="course-card-body">
+          <div class="course-category">Sustainability</div>
+          <div class="course-title">Design a Greener Neighborhood</div>
+          <div class="course-meta"><span class="course-level">Intermediate</span><span class="course-duration">2h 30m</span></div>
+          <div class="course-ai"><span>✦</span> AI-supported</div>
+        </div>
+      </div>
+      <div class="course-card">
+        <div class="course-card-thumb" style="background:#FFF1D6;">🎤</div>
+        <div class="course-card-body">
+          <div class="course-category">Communication Skills</div>
+          <div class="course-title">Public Speaking Without the Sweat</div>
+          <div class="course-meta"><span class="course-level">Beginner</span><span class="course-duration">1h 55m</span></div>
+          <div class="course-ai"><span>✦</span> AI-supported</div>
+        </div>
+      </div>
+      <div class="course-card">
+        <div class="course-card-thumb" style="background:#EDE9FE;">💻</div>
+        <div class="course-card-body">
+          <div class="course-category">Coding Basics</div>
+          <div class="course-title">Build Your First Website</div>
+          <div class="course-meta"><span class="course-level">Beginner</span><span class="course-duration">3h 30m</span></div>
+          <div class="course-ai"><span>✦</span> AI-supported</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TESTIMONIALS ================= -->
+  <section>
+    <div class="section-heading-center" style="max-width:600px;">
+      <span class="eyebrow">Loved by learners</span>
+      <h2 class="section-title">Don't just take our word for it.</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-quote">"Lumi actually explains things the way my friends would, not like a textbook. I finally get compound interest."</p>
+        <div class="testimonial-person">
+          <div class="testimonial-avatar" style="background:#6E5EF0;">MR</div>
+          <div>
+            <div class="testimonial-name">Maya R.</div>
+            <div class="testimonial-role">Age 15, Learner</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-quote">"As a parent I don't have to hover — the weekly summary tells me exactly what she's been working on."</p>
+        <div class="testimonial-person">
+          <div class="testimonial-avatar" style="background:#FF6F59;">DO</div>
+          <div>
+            <div class="testimonial-name">David O.</div>
+            <div class="testimonial-role">Parent</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-quote">"I use BrightPath to assign extra practice. The AI tutor usage summary is genuinely useful for check-ins."</p>
+        <div class="testimonial-person">
+          <div class="testimonial-avatar" style="background:#2FA671;">PN</div>
+          <div>
+            <div class="testimonial-name">Priya N.</div>
+            <div class="testimonial-role">Teacher</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PRICING ================= -->
+  <section id="pricing" data-lumi="hint" data-lumi-msg="Psst — you can start free">
+    <div class="section-heading-center" style="max-width:600px;">
+      <span class="eyebrow">Pricing</span>
+      <h2 class="section-title">Start free. Grow when you're ready.</h2>
+    </div>
+    <div class="pricing-grid">
+      <div class="plan-card">
+        <div class="plan-name">Explorer</div>
+        <div class="plan-price-row"><span class="plan-price">Free</span><span class="plan-period">/forever</span></div>
+        <p class="plan-tagline">Get a feel for guided learning.</p>
+        <div class="plan-features">
+          <div class="plan-feature"><span class="tick">✓</span>2 learning journeys</div>
+          <div class="plan-feature"><span class="tick">✓</span>Limited AI tutor chats</div>
+          <div class="plan-feature"><span class="tick">✓</span>Basic progress tracking</div>
+        </div>
+        <a href="#" class="plan-cta">Start Free</a>
+      </div>
+      <div class="plan-card is-popular">
+        <div class="plan-badge">MOST POPULAR</div>
+        <div class="plan-name">Plus</div>
+        <div class="plan-price-row"><span class="plan-price">$12</span><span class="plan-period">/month</span></div>
+        <p class="plan-tagline">For learners going all in.</p>
+        <div class="plan-features">
+          <div class="plan-feature"><span class="tick">✓</span>All learning journeys</div>
+          <div class="plan-feature"><span class="tick">✓</span>Unlimited AI tutor</div>
+          <div class="plan-feature"><span class="tick">✓</span>Full progress &amp; achievements</div>
+          <div class="plan-feature"><span class="tick">✓</span>Certificates on completion</div>
+        </div>
+        <a href="#" class="plan-cta">Start Plus</a>
+      </div>
+      <div class="plan-card">
+        <div class="plan-name">Family</div>
+        <div class="plan-price-row"><span class="plan-price">$24</span><span class="plan-period">/month</span></div>
+        <p class="plan-tagline">Up to 4 learners + parent view.</p>
+        <div class="plan-features">
+          <div class="plan-feature"><span class="tick">✓</span>Everything in Plus</div>
+          <div class="plan-feature"><span class="tick">✓</span>4 learner profiles</div>
+          <div class="plan-feature"><span class="tick">✓</span>Parent insights dashboard</div>
+          <div class="plan-feature"><span class="tick">✓</span>Priority support</div>
+        </div>
+        <a href="#" class="plan-cta">Start Family</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section class="faq-section" data-lumi="thinking" data-lumi-msg="Got questions? I've got answers">
+    <div class="section-heading-center" style="margin-bottom:48px;">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="section-title section-title-sm">Questions? Lumi's got you.</h2>
+    </div>
+    <div class="faq-list" id="faq-list">
+      <div class="faq-item is-open">
+        <button class="faq-question" type="button">
+          <span class="faq-question-text">Is BrightPath AI safe for kids and teens?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">Yes — every AI conversation is age-appropriate, moderated, and designed to encourage learning rather than just give answers. Parents can see a summary of AI tutor activity anytime.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          <span class="faq-question-text">How is this different from a regular online course platform?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">BrightPath pairs structured learning journeys with Lumi, an always-on AI tutor that explains, hints, and adapts to how you're doing — not just pre-recorded videos.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          <span class="faq-question-text">Can parents and teachers see my progress?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">Learners get full control over their own journey. Parents and teachers linked to an account see friendly, plain-language progress summaries — not a play-by-play of every click.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          <span class="faq-question-text">Do I need to know anything about AI to use it?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">Not at all. Lumi is built right into every lesson — you just ask questions naturally, the same way you'd ask a helpful friend.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          <span class="faq-question-text">What devices does BrightPath AI work on?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">BrightPath works in any modern browser on laptop, tablet, or phone, so you can pick up a journey wherever you left off.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FINAL CTA ================= -->
+  <section data-lumi="celebrating" data-lumi-msg="Let's gooo! Your journey starts here ✦" style="padding-top:0;">
+    <div class="final-cta-card">
+      <div class="final-cta-copy">
+        <h2>Your next skill is one journey away.</h2>
+        <p>Join for free — Lumi will help you pick where to start.</p>
+        <a href="#" class="btn">Start Learning →</a>
+      </div>
+      <div class="final-cta-mascot">
+        <div id="lumi-dock-slot"></div>
+        <div class="lumi-hero-fallback">
+          <lumi-mascot-3d variant="balanced" expression="celebrating" size="200"></lumi-mascot-3d>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <div class="brand-mark">
+            <lumi-mascot-3d mode="mark" variant="balanced" size="26" halo="off"></lumi-mascot-3d>
+          </div>
+          <span class="footer-brand-name">BrightPath AI</span>
+        </div>
+        <p class="footer-desc">An AI-powered learning platform for curious minds — guided journeys, real skills, one friendly companion.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Product</div>
+        <div class="footer-links">
+          <a href="#">Courses</a>
+          <a href="#">AI Tutor</a>
+          <a href="#">Journeys</a>
+          <a href="#">Pricing</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <div class="footer-links">
+          <a href="#">About</a>
+          <a href="#">Careers</a>
+          <a href="#">Blog</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">For</div>
+        <div class="footer-links">
+          <a href="#">Learners</a>
+          <a href="#">Parents</a>
+          <a href="#">Teachers</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Support</div>
+        <div class="footer-links">
+          <a href="#">Help Center</a>
+          <a href="#">Safety</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 BrightPath AI. All rights reserved.</span>
+      <span>Made with a friendly AI companion, for learners everywhere.</span>
+    </div>
+  </footer>
+
+  <!-- ================= AI TUTOR CHAT (opens above the flying companion) ================= -->
+  <div class="tutor-chat" id="tutor-chat">
+    <div class="tutor-chat-panel">
+      <div class="tutor-chat-head">
+        <div class="tutor-chat-avatar">
+          <lumi-mascot-3d mode="mark" variant="balanced" size="34" halo="off"></lumi-mascot-3d>
+        </div>
+        <div style="flex:1;">
+          <div class="tutor-chat-name">Lumi</div>
+          <div class="tutor-chat-status">Ready to help</div>
+        </div>
+        <button class="tutor-chat-close" id="tutor-chat-close" type="button" aria-label="Close chat">✕</button>
+      </div>
+      <div class="tutor-chat-body">
+        <div class="tutor-chat-greeting">Hey! I'm Lumi ✦ Ask me anything about a lesson, or try a quick action below.</div>
+        <div class="tutor-chat-actions">
+          <div class="tutor-chat-action">Explain this simply</div>
+          <div class="tutor-chat-action">Give me a hint</div>
+          <div class="tutor-chat-action">Quiz me</div>
+          <div class="tutor-chat-action">Summarize this</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="js/lumi3d.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
