@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  html, body { height: 100%; }
+  body { margin: 0; }
+  #dc-root, #dc-root > div { height: 100%; }
+  a { color: #6b6bb8; }
+  a:hover { color: #4d4d99; }
+</style>
+</helmet>
+<div data-screen-label="Paperclip Character" onClick="{{ nextPose }}" title="Click to change pose" style="width: 100%; height: 100%; min-height: 320px; position: relative; display: flex; align-items: flex-end; justify-content: center; cursor: pointer; user-select: none;">
+  <div ref="{{ shadowRef }}" style="position: absolute; bottom: 8px; left: 50%; width: 55%; height: 26px; background: radial-gradient(ellipse at center, rgba(40, 40, 70, 0.55) 0%, rgba(40, 40, 70, 0) 70%); border-radius: 50%; transform: translateX(-50%); pointer-events: none; will-change: transform, opacity;"></div>
+  <div ref="{{ bodyRef }}" style="height: 92%; width: 100%; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 18px; transform-origin: 50% 100%; will-change: transform;">
+    <div style="position: relative; height: 100%; max-width: 100%; aspect-ratio: {{ aspect }};">
+      <img ref="{{ bodyImgRef }}" src="poses/pose1-body.png" alt="Paperclip character" draggable="false" style="position: absolute; inset: 0; width: 100%; height: 100%;">
+      <sc-if value="{{ hasArm }}" hint-placeholder-val="{{ true }}">
+        <img ref="{{ armRef }}" src="poses/pose1-arm.png" alt="" draggable="false" style="position: absolute; inset: 0; width: 100%; height: 100%; transform-origin: 31.1% 56.6%; will-change: transform;">
+      </sc-if>
+      <sc-for list="{{ eyes }}" as="e" hint-placeholder-count="2">
+        <div style="position: absolute; left: {{ e.left }}; top: {{ e.top }}; width: {{ e.w }}; height: {{ e.h }}; border-radius: 50%; background: radial-gradient(circle at 38% 30%, #ffffff 50%, #ece9f3 76%, #d6d3e4 100%); overflow: hidden;">
+          <div ref="{{ e.irisRef }}" style="position: absolute; left: 50%; top: 52%; width: 54%; aspect-ratio: 1 / 1; margin-left: -27%; margin-top: -27%; border-radius: 50%; background: radial-gradient(circle at 38% 30%, #a9c0dd 0%, #587ba6 40%, #2e4c6d 72%, #22394f 100%); will-change: transform;">
+            <div style="position: absolute; left: 27%; top: 30%; width: 46%; height: 46%; border-radius: 50%; background: #131d2a;"></div>
+            <div style="position: absolute; left: 14%; top: 10%; width: 30%; height: 30%; border-radius: 50%; background: rgba(255, 255, 255, 0.92);"></div>
+          </div>
+          <div ref="{{ e.lidRef }}" style="position: absolute; inset: -4%; border-radius: 46%; background: linear-gradient(180deg, #b6b1de 0%, #a09ad0 100%); transform: translateY(-106%); will-change: transform;"></div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: { &quot;width&quot;: 560, &quot;height&quot;: 660 },
+  &quot;pose&quot;: {
+    &quot;editor&quot;: &quot;enum&quot;,
+    &quot;default&quot;: &quot;auto&quot;,
+    &quot;tsType&quot;: &quot;string&quot;,
+    &quot;options&quot;: [&quot;auto&quot;, &quot;presenting&quot;, &quot;hands-on-hips&quot;, &quot;thinking&quot;, &quot;pointing-up&quot;, &quot;waving&quot;],
+    &quot;section&quot;: &quot;Character&quot;
+  },
+  &quot;cycleSeconds&quot;: {
+    &quot;editor&quot;: &quot;range&quot;,
+    &quot;default&quot;: 4,
+    &quot;min&quot;: 1.5,
+    &quot;max&quot;: 10,
+    &quot;step&quot;: 0.5,
+    &quot;unit&quot;: &quot;s&quot;,
+    &quot;tsType&quot;: &quot;number&quot;,
+    &quot;section&quot;: &quot;Character&quot;
+  }
+}">
+class Component extends DCLogic {
+  state = { idx: 0 };
+
+  poses = ['presenting', 'hands-on-hips', 'thinking', 'pointing-up', 'waving'];
+
+  CONF = {
+    'presenting': {
+      aspect: '740 / 830', body: 'poses/pose1-body.png',
+      arm: 'poses/pose1-arm.png', origin: '31.1% 56.6%', armStyle: 'offer',
+      eyes: [
+        { left: '27.8%', top: '22.9%', w: '17.3%', h: '16.1%' },
+        { left: '47.6%', top: '22.0%', w: '16.2%', h: '15.5%' },
+      ],
+    },
+    'hands-on-hips': {
+      aspect: '320 / 440', body: 'poses/pose2-hands-on-hips.png',
+      eyes: [
+        { left: '25.3%', top: '21.8%', w: '16.3%', h: '12.5%' },
+        { left: '45.0%', top: '20.5%', w: '18.8%', h: '14.5%' },
+      ],
+    },
+    'thinking': {
+      aspect: '300 / 430', body: 'poses/pose3-thinking.png',
+      eyes: [
+        { left: '21.3%', top: '26.5%', w: '22.0%', h: '16.3%' },
+        { left: '45.0%', top: '25.6%', w: '19.0%', h: '14.4%' },
+      ],
+    },
+    'pointing-up': {
+      aspect: '295 / 430', body: 'poses/pose4-body.png',
+      arm: 'poses/pose4-arm.png', origin: '32.2% 54.7%', armStyle: 'pump',
+      eyes: [
+        { left: '31.2%', top: '23.7%', w: '18.3%', h: '13.0%' },
+        { left: '53.9%', top: '23.0%', w: '16.9%', h: '12.8%' },
+      ],
+    },
+    'waving': {
+      aspect: '345 / 430', body: 'poses/pose5-body.png',
+      arm: 'poses/pose5-arm.png', origin: '28.4% 53.0%', armStyle: 'wave',
+      eyes: [
+        { left: '29.3%', top: '24.2%', w: '15.9%', h: '13.3%' },
+        { left: '49.6%', top: '23.5%', w: '14.8%', h: '12.8%' },
+      ],
+    },
+  };
+
+  bodyRef = React.createRef();
+  shadowRef = React.createRef();
+  armRef = React.createRef();
+  bodyImgRef = React.createRef();
+  eyeRefs = [
+    { iris: React.createRef(), lid: React.createRef() },
+    { iris: React.createRef(), lid: React.createRef() },
+  ];
+
+  componentDidMount() {
+    window.__clip = this;
+    this.syncImages();
+    this.t0 = performance.now();
+    this.action = null;
+    this.nextActionAt = 2.2;
+    this.gaze = { x: 0, y: 0 };
+    this.gazeTarget = { x: 0, y: 0 };
+    this.nextGazeAt = 1.0;
+    this.nextBlinkAt = 1.6;
+    this.blinkStart = -1;
+    this.lastT = 0;
+    this.raf = requestAnimationFrame(this.tick);
+  }
+
+  componentWillUnmount() {
+    cancelAnimationFrame(this.raf);
+  }
+
+  componentDidUpdate() {
+    this.syncImages();
+  }
+
+  syncImages() {
+    const conf = this.CONF[this.activePose()];
+    if (!conf) return;
+    const b = this.bodyImgRef.current;
+    if (b && b.getAttribute('src') !== conf.body) b.setAttribute('src', conf.body);
+    const a = this.armRef.current;
+    if (a && conf.arm) {
+      if (a.getAttribute('src') !== conf.arm) a.setAttribute('src', conf.arm);
+      a.style.transformOrigin = conf.origin;
+    }
+  }
+
+  env(p) {
+    return Math.sin(Math.PI * Math.min(Math.max(p, 0), 1));
+  }
+
+  ease(p) {
+    return p < 0 ? 0 : p > 1 ? 1 : p * p * (3 - 2 * p);
+  }
+
+  startAction(t, forcedType) {
+    const types = ['switch', 'hop', 'wiggle', 'lean', 'switch'];
+    const type = forcedType || types[Math.floor(Math.random() * types.length)];
+    const durations = { switch: 1.1, hop: 0.95, wiggle: 0.8, lean: 1.6 };
+    this.action = { type, start: t, duration: durations[type], swapped: false, dir: Math.random() < 0.5 ? -1 : 1 };
+  }
+
+  scheduleNext(t) {
+    const secs = this.props.cycleSeconds ?? 4;
+    this.nextActionAt = t + secs * (0.55 + Math.random() * 0.9);
+  }
+
+  activePose() {
+    const poseProp = this.props.pose ?? 'auto';
+    return poseProp === 'auto' ? this.poses[this.state.idx] : poseProp;
+  }
+
+  tick = (now) => {
+    this.raf = requestAnimationFrame(this.tick);
+    const t = (now - this.t0) / 1000;
+    const dt = Math.min(0.1, t - this.lastT);
+    const auto = (this.props.pose ?? 'auto') === 'auto';
+
+    // --- layered idle motion ---
+    let x = 2.5 * Math.sin(t * 0.55);
+    let y = 5 * Math.sin(t * 1.35) + 2.5 * Math.sin(t * 2.3 + 1.3);
+    let rot = 1.7 * Math.sin(t * 0.85) + 0.6 * Math.sin(t * 1.9 + 2.1);
+    const breathe = 0.014 * Math.sin(t * 1.9);
+    let sy = 1 + breathe;
+    let sx = 1 - breathe * 0.7;
+
+    // --- micro-actions ---
+    if (auto && !this.action && t >= this.nextActionAt) this.startAction(t);
+    if (this.action) {
+      const a = this.action;
+      const p = (t - a.start) / a.duration;
+      if (p >= 1) {
+        this.action = null;
+        this.scheduleNext(t);
+      } else if (a.type === 'hop') {
+        const bounce = Math.abs(Math.sin(Math.PI * 2 * p)) * (1 - p * 0.45);
+        y -= 44 * bounce;
+        const squash = Math.max(0, 0.1 - bounce * 0.3);
+        sy -= squash;
+        sx += squash * 0.9;
+        sy += bounce * 0.06;
+        sx -= bounce * 0.04;
+      } else if (a.type === 'wiggle') {
+        rot += a.dir * 5.5 * Math.sin(p * Math.PI * 5) * (1 - p);
+      } else if (a.type === 'lean') {
+        const e = p < 0.3 ? this.ease(p / 0.3) : p > 0.7 ? 1 - this.ease((p - 0.7) / 0.3) : 1;
+        rot += a.dir * 7 * e;
+        x += a.dir * 10 * e;
+      } else if (a.type === 'switch') {
+        if (p < 0.22) {
+          const e = this.ease(p / 0.22);
+          sy -= 0.1 * e;
+          sx += 0.07 * e;
+          y += 10 * e;
+        } else {
+          if (!a.swapped) {
+            a.swapped = true;
+            this.setState((s) => {
+              let n = Math.floor(Math.random() * this.poses.length);
+              if (n === s.idx) n = (n + 1) % this.poses.length;
+              return { idx: n };
+            });
+          }
+          const q = (p - 0.22) / 0.78;
+          const spring = Math.exp(-4.5 * q) * Math.cos(q * Math.PI * 3);
+          y -= 26 * this.env(Math.min(q * 2.2, 1)) * Math.exp(-2.5 * q);
+          sy += 0.09 * spring;
+          sx -= 0.06 * spring;
+        }
+      }
+    }
+
+    // --- gaze: wandering eyes with eased saccades ---
+    if (t >= this.nextGazeAt) {
+      this.gazeTarget = { x: (Math.random() * 2 - 1) * 0.9, y: (Math.random() * 2 - 1) * 0.55 };
+      this.nextGazeAt = t + 1.2 + Math.random() * 2.6;
+    }
+    const k = 1 - Math.exp(-7 * dt);
+    this.gaze.x += (this.gazeTarget.x - this.gaze.x) * k;
+    this.gaze.y += (this.gazeTarget.y - this.gaze.y) * k;
+
+    // --- blinks ---
+    let lidY = -106;
+    if (this.blinkStart >= 0) {
+      const bp = (t - this.blinkStart) / 0.16;
+      if (bp >= 1) {
+        this.blinkStart = -1;
+        this.nextBlinkAt = t + (Math.random() < 0.2 ? 0.25 : 1.8 + Math.random() * 3.4);
+      } else {
+        lidY = -106 + 106 * Math.sin(Math.PI * bp);
+      }
+    } else if (t >= this.nextBlinkAt) {
+      this.blinkStart = t;
+    }
+    for (const er of this.eyeRefs) {
+      if (er.iris.current) {
+        er.iris.current.style.transform =
+          'translate(' + (this.gaze.x * 30).toFixed(1) + '%, ' + (this.gaze.y * 22).toFixed(1) + '%)';
+      }
+      if (er.lid.current) {
+        er.lid.current.style.transform = 'translateY(' + lidY.toFixed(1) + '%)';
+      }
+    }
+
+    // --- arm gesture ---
+    const conf = this.CONF[this.activePose()];
+    if (conf && conf.arm && this.armRef.current) {
+      let ar = 1.4 * Math.sin(t * 1.15); // never fully still
+      if (conf.armStyle === 'offer') {
+        ar += 4.5 * Math.sin(t * 2.2) * (0.3 + 0.7 * Math.max(0, Math.sin(t * 0.6)));
+      } else if (conf.armStyle === 'pump') {
+        ar += 7 * Math.sin(t * 5) * Math.pow(Math.max(0, Math.sin(t * 0.7)), 2);
+      } else if (conf.armStyle === 'wave') {
+        ar += 13 * Math.sin(t * 7.5) * Math.min(1, Math.max(0, Math.sin(t * 0.5) * 1.6 - 0.25));
+      }
+      this.armRef.current.style.transform = 'rotate(' + ar.toFixed(2) + 'deg)';
+    }
+
+    // --- body + shadow ---
+    const body = this.bodyRef.current;
+    if (body) {
+      body.style.transform =
+        'translate(' + x.toFixed(2) + 'px, ' + y.toFixed(2) + 'px) rotate(' + rot.toFixed(2) + 'deg) scale(' + sx.toFixed(4) + ', ' + sy.toFixed(4) + ')';
+    }
+    const shadow = this.shadowRef.current;
+    if (shadow) {
+      const lift = Math.max(0, -y);
+      const s = Math.max(0.62, 1 - lift / 130);
+      shadow.style.transform = 'translateX(-50%) scaleX(' + s.toFixed(3) + ')';
+      shadow.style.opacity = (0.24 * s).toFixed(3);
+    }
+    this.lastT = t;
+  };
+
+  renderVals() {
+    const active = this.activePose();
+    const conf = this.CONF[active];
+    return {
+      ready: true,
+      bodyRef: this.bodyRef,
+      shadowRef: this.shadowRef,
+      armRef: this.armRef,
+      aspect: conf.aspect,
+      bodySrc: conf.body,
+      hasArm: !!conf.arm,
+      armSrc: conf.arm || '',
+      armOrigin: conf.origin || '50% 50%',
+      eyes: conf.eyes.map((e, i) => ({
+        left: e.left, top: e.top, w: e.w, h: e.h,
+        irisRef: this.eyeRefs[i].iris,
+        lidRef: this.eyeRefs[i].lid,
+      })),
+      nextPose: () => {
+        if (!this.action) {
+          this.startAction(this.lastT || 0, 'switch');
+          this.scheduleNext(this.lastT || 0);
+        }
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>

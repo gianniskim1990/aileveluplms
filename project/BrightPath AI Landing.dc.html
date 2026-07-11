@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #FAFAFB; font-family: 'Plus Jakarta Sans', sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: #6E5EF0; text-decoration: none; }
+    a:hover { color: #4B3ADB; }
+    ::selection { background: #DCD6FA; }
+    @keyframes floatY { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-14px); } }
+    @keyframes blob { 0%, 100% { border-radius: 42% 58% 65% 35% / 45% 40% 60% 55%; } 50% { border-radius: 60% 40% 35% 65% / 55% 65% 35% 45%; } }
+    @keyframes pulseDot { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
+    @media (max-width: 1150px) {
+      .dc-nav-links { display: none !important; }
+      .dc-lumi-companion { display: none !important; }
+      .dc-lumi-hero-fallback { display: flex !important; }
+    }
+    @media (max-width: 640px) {
+      .dc-nav-cta a:first-child { display: none; }
+    }
+  </style>
+</helmet>
+
+<div style="width:100%; overflow-x:hidden; background:#FAFAFB; color:#1B1830;">
+
+  <!-- ================= NAV ================= -->
+  <header style="position:sticky; top:0; z-index:50; background:rgba(250,250,251,0.82); backdrop-filter:blur(14px); border-bottom:1px solid rgba(20,17,43,0.07);">
+    <div style="max-width:1240px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:16px 32px;">
+      <div style="display:flex; align-items:center; gap:10px; flex-shrink:0;">
+        <div style="width:40px; height:40px; border-radius:12px; background:linear-gradient(145deg,#8479F2,#5C4CE0); display:flex; align-items:center; justify-content:center; box-shadow:0 6px 16px rgba(94,76,224,0.35); flex-shrink:0;">
+          <x-import component-from-global-scope="lumi-mascot-3d" from="./lumi3d.js" mode="mark" variant="balanced" size="30" halo="off" hint-size="30px,30px"></x-import>
+        </div>
+        <span style="font-family:'Sora',sans-serif; font-weight:700; font-size:19px; letter-spacing:-0.02em; color:#1B1830; white-space:nowrap;">BrightPath <span style="color:#6E5EF0;">AI</span></span>
+      </div>
+      <nav style="display:flex; align-items:center; gap:24px; flex-wrap:wrap; justify-content:center; min-width:0;" class="dc-nav-links">
+        <a href="#journeys" style="font-size:14.5px; font-weight:600; color:#4A4560;">Journeys</a>
+        <a href="#ai-tutor" style="font-size:14.5px; font-weight:600; color:#4A4560;">AI Tutor</a>
+        <a href="#courses" style="font-size:14.5px; font-weight:600; color:#4A4560;">Courses</a>
+        <a href="#parents" style="font-size:14.5px; font-weight:600; color:#4A4560;">For Parents &amp; Teachers</a>
+        <a href="#pricing" style="font-size:14.5px; font-weight:600; color:#4A4560;">Pricing</a>
+      </nav>
+      <div style="display:flex; align-items:center; gap:14px; flex-shrink:0;" class="dc-nav-cta">
+        <a href="#" style="font-size:14.5px; font-weight:600; color:#1B1830;">Log in</a>
+        <a href="#" style="font-size:14.5px; font-weight:700; color:#fff; background:#1B1830; padding:11px 20px; border-radius:100px; white-space:nowrap;" style-hover="background:#4B3ADB;">Start Learning</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section data-lumi="happy" data-lumi-msg="Hi! I'm Lumi — scroll with me ✦" style="position:relative; padding:96px 32px 60px; overflow:hidden;">
+    <div style="position:absolute; top:-160px; right:-120px; width:520px; height:520px; background:radial-gradient(circle at 30% 30%, #C9C0FA, transparent 70%); filter:blur(10px); animation:blob 14s ease-in-out infinite; z-index:0;"></div>
+    <div style="position:absolute; bottom:-200px; left:-140px; width:460px; height:460px; background:radial-gradient(circle at 60% 40%, #FFD9A8, transparent 70%); filter:blur(10px); animation:blob 16s ease-in-out infinite reverse; z-index:0;"></div>
+
+    <div style="position:relative; z-index:1; max-width:1240px; margin:0 auto; display:grid; grid-template-columns:1fr 480px; gap:48px; align-items:center;" class="dc-hero-grid">
+      <div>
+        <div style="display:inline-flex; align-items:center; gap:8px; background:#fff; border:1px solid rgba(20,17,43,0.08); padding:8px 16px 8px 8px; border-radius:100px; box-shadow:0 4px 14px rgba(20,17,43,0.05); margin-bottom:28px;">
+          <div style="width:28px; height:28px; border-radius:50%; background:#151129; overflow:hidden; display:flex; align-items:center; justify-content:center;">
+            <x-import component-from-global-scope="lumi-mascot-3d" from="./lumi3d.js" mode="mark" variant="balanced" size="22" halo="off" hint-size="22px,22px"></x-import>
+          </div>
+          <span style="font-size:13.5px; font-weight:700; color:#4B3ADB;">Meet Lumi — your AI learning companion</span>
+        </div>
+        <h1 style="font-family:'Sora',sans-serif; font-size:56px; line-height:1.06; font-weight:800; letter-spacing:-0.025em; margin:0 0 22px; color:#151129;">Learning that actually gets&nbsp;you.</h1>
+        <p style="font-size:18px; line-height:1.6; color:#57516B; max-width:480px; margin:0 0 36px;">BrightPath AI pairs guided learning journeys with a personal AI tutor, so you always know your next step — and it doesn't feel like homework.</p>
+        <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
+          <a href="#" style="font-size:15.5px; font-weight:700; color:#fff; background:#1B1830; padding:16px 28px; border-radius:100px; display:inline-flex; align-items:center; gap:8px; box-shadow:0 10px 24px rgba(27,24,48,0.25);" style-hover="background:#4B3ADB; box-shadow:0 10px 24px rgba(75,58,219,0.35);">Start Learning →</a>
+          <a href="#courses" style="font-size:15.5px; font-weight:700; color:#1B1830; background:transparent; border:2px solid rgba(20,17,43,0.14); padding:14px 26px; border-radius:100px;" style-hover="border-color:#1B1830;">Explore Courses</a>
+        </div>
+        <div style="display:flex; align-items:center; gap:28px; margin-top:44px;">
+          <div>
+            <div style="font-family:'Sora',sans-serif; font-size:24px; font-weight:800; color:#151129;">120+</div>
+            <div style="font-size:13px; color:#847E97; font-weight:600;">guided courses</div>
+          </div>
+          <div style="width:1px; height:32px; background:rgba(20,17,43,0.1);"></div>
+          <div>
+            <div style="font-family:'Sora',sans-serif; font-size:24px; font-weight:800; color:#151129;">40+</div>
+            <div style="font-size:13px; color:#847E97; font-weight:600;">countries learning</div>
+          </div>
+          <div style="width:1px; height:32px; background:rgba(20,17,43,0.1);"></div>
+          <div>
+            <div style="font-family:'Sora',sans-serif; font-size:24px; font-weight:800; color:#151129;">24/7</div>
+            <div style="font-size:13px; color:#847E97; font-weight:600;">AI tutor support</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="position:relative; height:520px;">
+        <div style="position:absolute; inset:20px 0; background:linear-gradient(165deg,#1B1F5E,#141748 55%,#0E1030); border-radius:32px; box-shadow:0 30px 60px -24px rgba(20,17,43,0.4);"></div>
+        <div style="position:absolute; inset:20px 0; border-radius:32px; z-index:1; display:flex; align-items:center; justify-content:center;">
+          <div id="lumi-hero-slot" style="width:360px; height:360px;"></div>
+          <div class="dc-lumi-hero-fallback" style="display:none; position:absolute; inset:0; align-items:center; justify-content:center;">
+            <x-import component-from-global-scope="lumi-mascot-3d" from="./lumi3d.js" variant="balanced" expression="happy" size="340" hint-size="340px,340px"></x-import>
+          </div>
+        </div>
+        <div style="position:absolute; top:26px; right:6px; background:#fff; border-radius:18px; padding:12px 16px; box-shadow:0 14px 32px rgba(20,17,43,0.14); display:flex; align-items:center; gap:10px; z-index:2;">
+          <div style="width:30px; height:30px; border-radius:50%; background:#FFF1D6; display:flex; align-items:center; justify-content:center; font-size:15px;">🔥</div>
+          <div>
+            <div style="font-size:11.5px; color:#847E97; font-weight:600;">Streak</div>
+            <div style="font-size:14px; font-weight:800; color:#151129; font-family:'Sora',sans-serif;">12 days</div>
+          </div>
+        </div>
+        <div style="position:absolute; bottom:44px; left:-10px; background:#fff; border-radius:18px; padding:14px 18px; box-shadow:0 14px 32px rgba(20,17,43,0.14); z-index:2; max-width:210px;">
+          <div style="font-size:12.5px; color:#4B3ADB; font-weight:700; margin-bottom:4px;">Lumi says</div>
+          <div style="font-size:13.5px; color:#3A3550; line-height:1.4;">"Nice! You just unlocked <b>Budgeting Basics</b>. Want a hint to start?"</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LOGOS / TRUST STRIP ================= -->
+  <section style="padding:36px 32px; border-top:1px solid rgba(20,17,43,0.06); border-bottom:1px solid rgba(20,17,43,0.06);">
+    <div style="max-width:1240px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;">
+      <span style="font-size:13px; font-weight:700; color:#9992AB; letter-spacing:0.02em;">TRUSTED BY LEARNERS AND FAMILIES AT</span>
+      <div style="display:flex; gap:36px; flex-wrap:wrap; align-items:center;">
+        <sc-for list="{{ trustLogos }}" as="logo" hint-placeholder-count="5">
+          <span style="font-family:'Sora',sans-serif; font-weight:700; font-size:15px; color:#B7B0C7;">{{ logo }}</span>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LEARNING JOURNEYS ================= -->
+  <section id="journeys" data-lumi="thinking" data-lumi-msg="One clear step at a time…" style="padding:110px 32px; max-width:1240px; margin:0 auto;">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;" class="dc-journeys-grid">
+      <div>
+        <span style="font-size:13px; font-weight:800; color:#4B3ADB; letter-spacing:0.06em; text-transform:uppercase;">Learning journeys</span>
+        <h2 style="font-family:'Sora',sans-serif; font-size:38px; font-weight:800; letter-spacing:-0.02em; margin:14px 0 18px; color:#151129;">One clear path, not a pile of tabs.</h2>
+        <p style="font-size:16.5px; line-height:1.7; color:#57516B; margin:0 0 28px; max-width:460px;">Every skill on BrightPath is broken into a journey — a sequence of bite-sized lessons, checkpoints, and quizzes that builds real momentum instead of overwhelm.</p>
+        <div style="display:flex; flex-direction:column; gap:16px;">
+          <sc-for list="{{ journeySteps }}" as="step" hint-placeholder-count="3">
+            <div style="display:flex; align-items:center; gap:14px;">
+              <div style="width:34px; height:34px; border-radius:10px; background:{{ step.bg }}; display:flex; align-items:center; justify-content:center; font-size:16px; flex-shrink:0;">{{ step.icon }}</div>
+              <div style="font-size:14.5px; color:#3A3550; font-weight:600;">{{ step.label }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="background:linear-gradient(160deg,#FBF6E9,#F3EEFB); border-radius:28px; padding:36px; position:relative; box-shadow:0 24px 50px -20px rgba(20,17,43,0.18);">
+        <div style="display:flex; flex-direction:column; gap:0;">
+          <sc-for list="{{ journeyNodes }}" as="node" hint-placeholder-count="4">
+            <div style="display:flex; gap:16px;">
+              <div style="display:flex; flex-direction:column; align-items:center;">
+                <div style="width:44px; height:44px; border-radius:50%; background:{{ node.done }}; color:#fff; display:flex; align-items:center; justify-content:center; font-family:'Sora',sans-serif; font-weight:800; font-size:15px; box-shadow:0 6px 14px rgba(20,17,43,0.15); flex-shrink:0;">{{ node.mark }}</div>
+                <sc-if value="{{ node.hasLine }}"><div style="width:3px; flex:1; min-height:34px; background:rgba(20,17,43,0.12); border-radius:2px;"></div></sc-if>
+              </div>
+              <div style="padding-bottom:28px;">
+                <div style="font-size:11.5px; font-weight:700; color:#9992AB; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:2px;">{{ node.tag }}</div>
+                <div style="font-size:15.5px; font-weight:700; color:#151129; font-family:'Sora',sans-serif;">{{ node.title }}</div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= AI TUTOR ================= -->
+  <section id="ai-tutor" data-lumi="explaining" data-lumi-msg="This is where I help you learn!" style="padding:20px 32px 110px; max-width:1240px; margin:0 auto;">
+    <div style="background:#151129; border-radius:32px; padding:64px; display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; position:relative; overflow:hidden;" class="dc-tutor-grid">
+      <div style="position:absolute; top:-100px; right:-100px; width:340px; height:340px; background:radial-gradient(circle, rgba(110,94,240,0.35), transparent 70%);"></div>
+      <div style="position:relative; z-index:1;">
+        <span style="font-size:13px; font-weight:800; color:#B8AEFF; letter-spacing:0.06em; text-transform:uppercase;">Your AI tutor</span>
+        <h2 style="font-family:'Sora',sans-serif; font-size:38px; font-weight:800; letter-spacing:-0.02em; margin:14px 0 18px; color:#fff;">Lumi explains it until it clicks.</h2>
+        <p style="font-size:16.5px; line-height:1.7; color:#C2BBD9; margin:0 0 28px; max-width:440px;">Stuck on something? Lumi breaks it down simply, gives hints instead of answers, and adjusts to how you learn best — available anytime, in any lesson.</p>
+        <div style="display:flex; flex-direction:column; gap:14px;">
+          <sc-for list="{{ tutorFeatures }}" as="feat" hint-placeholder-count="4">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <div style="width:8px; height:8px; border-radius:50%; background:#8DE9C0; flex-shrink:0;"></div>
+              <span style="font-size:14.5px; color:#E4DFF5; font-weight:500;">{{ feat }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="position:relative; z-index:1; background:#1E1A38; border-radius:24px; padding:22px; box-shadow:0 30px 60px rgba(0,0,0,0.35);">
+        <div style="display:flex; align-items:center; gap:10px; padding-bottom:16px; border-bottom:1px solid rgba(255,255,255,0.08); margin-bottom:16px;">
+          <div style="width:34px; height:34px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <x-import component-from-global-scope="lumi-mascot-3d" from="./lumi3d.js" mode="mark" variant="balanced" size="32" halo="off" hint-size="32px,32px"></x-import>
+          </div>
+          <div>
+            <div style="font-size:13.5px; font-weight:700; color:#fff;">Lumi · AI Tutor</div>
+            <div style="font-size:11.5px; color:#8DE9C0; display:flex; align-items:center; gap:5px;"><span style="width:6px; height:6px; border-radius:50%; background:#8DE9C0; display:inline-block;"></span>Online</div>
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:18px;">
+          <div style="align-self:flex-end; background:#6E5EF0; color:#fff; padding:11px 15px; border-radius:16px 16px 4px 16px; font-size:13.5px; max-width:78%;">I don't get compound interest 😩</div>
+          <div style="align-self:flex-start; background:#2A2650; color:#EDE9FE; padding:11px 15px; border-radius:16px 16px 16px 4px; font-size:13.5px; max-width:82%; line-height:1.5;">Think of it like a snowball 🌨️ — your money earns interest, then <i>that</i> interest earns interest too. Want to try it with a real number?</div>
+        </div>
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <sc-for list="{{ quickActions }}" as="qa" hint-placeholder-count="4">
+            <div style="background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.1); color:#D8D2EE; font-size:12.5px; font-weight:600; padding:8px 13px; border-radius:100px;">{{ qa }}</div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= INTERACTIVE LESSONS ================= -->
+  <section data-lumi="idle" data-lumi-msg="Learn by doing, not just watching" style="padding:20px 32px 110px; max-width:1240px; margin:0 auto;">
+    <div style="text-align:center; max-width:640px; margin:0 auto 56px;">
+      <span style="font-size:13px; font-weight:800; color:#4B3ADB; letter-spacing:0.06em; text-transform:uppercase;">Interactive lessons</span>
+      <h2 style="font-family:'Sora',sans-serif; font-size:38px; font-weight:800; letter-spacing:-0.02em; margin:14px 0 0; color:#151129;">Built to do, not just watch.</h2>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px;" class="dc-lessons-grid">
+      <sc-for list="{{ lessonFormats }}" as="fmt" hint-placeholder-count="3">
+        <div style="background:#fff; border:1px solid rgba(20,17,43,0.07); border-radius:24px; padding:32px; box-shadow:0 10px 30px -18px rgba(20,17,43,0.15);">
+          <div style="width:52px; height:52px; border-radius:16px; background:{{ fmt.bg }}; display:flex; align-items:center; justify-content:center; font-size:24px; margin-bottom:20px;">{{ fmt.icon }}</div>
+          <h3 style="font-family:'Sora',sans-serif; font-size:18px; font-weight:700; margin:0 0 8px; color:#151129;">{{ fmt.title }}</h3>
+          <p style="font-size:14.5px; color:#6B6580; line-height:1.6; margin:0;">{{ fmt.desc }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ================= PARENTS & TEACHERS ================= -->
+  <section id="parents" data-lumi="supportive" data-lumi-msg="Grown-ups get friendly insights too" style="padding:20px 32px 110px; max-width:1240px; margin:0 auto;">
+    <div style="background:linear-gradient(135deg,#F3EEFB,#FBF6E9); border-radius:32px; padding:64px; display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center;" class="dc-parents-grid">
+      <div>
+        <div style="width:230px; height:230px; margin:0 auto; border-radius:28px; background:linear-gradient(165deg,#1B1F5E,#141748); box-shadow:0 20px 40px -14px rgba(20,17,43,0.25); display:flex; align-items:center; justify-content:center;">
+          <x-import component-from-global-scope="lumi-mascot-3d" from="./lumi3d.js" variant="balanced" expression="idle" size="185" hint-size="185px,185px"></x-import>
+        </div>
+      </div>
+      <div>
+        <span style="font-size:13px; font-weight:800; color:#4B3ADB; letter-spacing:0.06em; text-transform:uppercase;">For parents &amp; teachers</span>
+        <h2 style="font-family:'Sora',sans-serif; font-size:34px; font-weight:800; letter-spacing:-0.02em; margin:14px 0 18px; color:#151129;">Full visibility, zero micromanaging.</h2>
+        <p style="font-size:16px; line-height:1.7; color:#57516B; margin:0 0 26px; max-width:460px;">See progress, time spent, and quiz results in plain language — plus what Lumi has been helping with — without hovering over every lesson.</p>
+        <div style="display:flex; flex-direction:column; gap:14px;">
+          <sc-for list="{{ parentFeatures }}" as="pf" hint-placeholder-count="4">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <div style="width:22px; height:22px; border-radius:50%; background:#6E5EF0; color:#fff; display:flex; align-items:center; justify-content:center; font-size:12px; flex-shrink:0;">✓</div>
+              <span style="font-size:14.5px; color:#3A3550; font-weight:600;">{{ pf }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= BENEFITS ================= -->
+  <section style="padding:20px 32px 110px; max-width:1240px; margin:0 auto;">
+    <div style="text-align:center; max-width:640px; margin:0 auto 56px;">
+      <span style="font-size:13px; font-weight:800; color:#4B3ADB; letter-spacing:0.06em; text-transform:uppercase;">Why BrightPath</span>
+      <h2 style="font-family:'Sora',sans-serif; font-size:38px; font-weight:800; letter-spacing:-0.02em; margin:14px 0 0; color:#151129;">Everything school skipped.</h2>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:20px;" class="dc-benefits-grid">
+      <sc-for list="{{ benefits }}" as="b" hint-placeholder-count="4">
+        <div style="padding:28px 22px; border-radius:22px; background:#fff; border:1px solid rgba(20,17,43,0.07);">
+          <div style="font-size:26px; margin-bottom:14px;">{{ b.icon }}</div>
+          <div style="font-family:'Sora',sans-serif; font-weight:700; font-size:16px; color:#151129; margin-bottom:6px;">{{ b.title }}</div>
+          <div style="font-size:13.5px; color:#6B6580; line-height:1.55;">{{ b.desc }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ================= COURSES ================= -->
+  <section id="courses" data-lumi="hint" data-lumi-msg="So many paths to pick from…" style="padding:20px 32px 110px; max-width:1240px; margin:0 auto;">
+    <div style="display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:40px; gap:24px; flex-wrap:wrap;">
+      <div>
+        <span style="font-size:13px; font-weight:800; color:#4B3ADB; letter-spacing:0.06em; text-transform:uppercase;">Sample courses</span>
+        <h2 style="font-family:'Sora',sans-serif; font-size:34px; font-weight:800; letter-spacing:-0.02em; margin:14px 0 0; color:#151129;">Skills for the world you're growing into.</h2>
+      </div>
+      <a href="#" style="font-size:14.5px; font-weight:700; color:#1B1830; border-bottom:2px solid #1B1830; padding-bottom:2px; white-space:nowrap;">Browse full library →</a>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:22px;" class="dc-courses-grid">
+      <sc-for list="{{ courses }}" as="c" hint-placeholder-count="8">
+        <div style="background:#fff; border:1px solid rgba(20,17,43,0.07); border-radius:22px; overflow:hidden; box-shadow:0 10px 26px -20px rgba(20,17,43,0.2);">
+          <div style="height:96px; background:{{ c.bg }}; display:flex; align-items:center; justify-content:center; font-size:32px;">{{ c.icon }}</div>
+          <div style="padding:20px;">
+            <div style="font-size:11.5px; font-weight:700; color:#4B3ADB; text-transform:uppercase; letter-spacing:0.03em; margin-bottom:8px;">{{ c.category }}</div>
+            <div style="font-family:'Sora',sans-serif; font-size:15.5px; font-weight:700; color:#151129; margin-bottom:12px; min-height:42px;">{{ c.title }}</div>
+            <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:12px;">
+              <span style="font-size:11.5px; font-weight:700; padding:4px 9px; border-radius:100px; background:#F1EEFC; color:#4B3ADB;">{{ c.level }}</span>
+              <span style="font-size:11.5px; color:#9992AB; font-weight:600;">{{ c.duration }}</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:5px; font-size:11.5px; font-weight:700; color:#2FA671;">
+              <span>✦</span> AI-supported
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ================= TESTIMONIALS ================= -->
+  <section style="padding:20px 32px 110px; max-width:1240px; margin:0 auto;">
+    <div style="text-align:center; max-width:600px; margin:0 auto 56px;">
+      <span style="font-size:13px; font-weight:800; color:#4B3ADB; letter-spacing:0.06em; text-transform:uppercase;">Loved by learners</span>
+      <h2 style="font-family:'Sora',sans-serif; font-size:38px; font-weight:800; letter-spacing:-0.02em; margin:14px 0 0; color:#151129;">Don't just take our word for it.</h2>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px;" class="dc-testimonials-grid">
+      <sc-for list="{{ testimonials }}" as="t" hint-placeholder-count="3">
+        <div style="background:#fff; border:1px solid rgba(20,17,43,0.07); border-radius:24px; padding:30px;">
+          <div style="font-size:15px; color:#FFB648; margin-bottom:16px; letter-spacing:2px;">★★★★★</div>
+          <p style="font-size:14.5px; line-height:1.7; color:#3A3550; margin:0 0 20px;">"{{ t.quote }}"</p>
+          <div style="display:flex; align-items:center; gap:10px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:{{ t.avatarBg }}; display:flex; align-items:center; justify-content:center; font-family:'Sora',sans-serif; font-weight:700; color:#fff; font-size:14px;">{{ t.initials }}</div>
+            <div>
+              <div style="font-size:13.5px; font-weight:700; color:#151129; white-space:nowrap;">{{ t.name }}</div>
+              <div style="font-size:12px; color:#9992AB;">{{ t.role }}</div>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ================= PRICING ================= -->
+  <section id="pricing" data-lumi="hint" data-lumi-msg="Psst — you can start free" style="padding:20px 32px 110px; max-width:1240px; margin:0 auto;">
+    <div style="text-align:center; max-width:600px; margin:0 auto 56px;">
+      <span style="font-size:13px; font-weight:800; color:#4B3ADB; letter-spacing:0.06em; text-transform:uppercase;">Pricing</span>
+      <h2 style="font-family:'Sora',sans-serif; font-size:38px; font-weight:800; letter-spacing:-0.02em; margin:14px 0 0; color:#151129;">Start free. Grow when you're ready.</h2>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px;" class="dc-pricing-grid">
+      <sc-for list="{{ plans }}" as="p" hint-placeholder-count="3">
+        <div style="background:{{ p.bg }}; border-radius:26px; padding:36px; position:relative; border:{{ p.border }};">
+          <sc-if value="{{ p.popular }}"><div style="position:absolute; top:-13px; left:36px; background:#FF6F59; color:#fff; font-size:11.5px; font-weight:800; padding:5px 12px; border-radius:100px;">MOST POPULAR</div></sc-if>
+          <div style="font-family:'Sora',sans-serif; font-size:18px; font-weight:700; color:{{ p.textColor }}; margin-bottom:6px;">{{ p.name }}</div>
+          <div style="display:flex; align-items:baseline; gap:4px; margin-bottom:6px;">
+            <span style="font-family:'Sora',sans-serif; font-size:38px; font-weight:800; color:{{ p.textColor }};">{{ p.price }}</span>
+            <span style="font-size:13.5px; color:{{ p.subColor }}; font-weight:600;">{{ p.period }}</span>
+          </div>
+          <p style="font-size:13.5px; color:{{ p.subColor }}; margin:0 0 24px;">{{ p.tagline }}</p>
+          <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:28px;">
+            <sc-for list="{{ p.features }}" as="f" hint-placeholder-count="4">
+              <div style="display:flex; align-items:center; gap:10px; font-size:13.5px; color:{{ p.textColor }}; font-weight:500;"><span style="opacity:0.6;">✓</span>{{ f }}</div>
+            </sc-for>
+          </div>
+          <a href="#" style="display:block; text-align:center; font-size:14.5px; font-weight:700; padding:13px; border-radius:100px; background:{{ p.btnBg }}; color:{{ p.btnColor }};">{{ p.cta }}</a>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section data-lumi="thinking" data-lumi-msg="Got questions? I've got answers" style="padding:20px 32px 110px; max-width:820px; margin:0 auto;">
+    <div style="text-align:center; margin-bottom:48px;">
+      <span style="font-size:13px; font-weight:800; color:#4B3ADB; letter-spacing:0.06em; text-transform:uppercase;">FAQ</span>
+      <h2 style="font-family:'Sora',sans-serif; font-size:34px; font-weight:800; letter-spacing:-0.02em; margin:14px 0 0; color:#151129;">Questions? Lumi's got you.</h2>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <sc-for list="{{ faqs }}" as="faq" hint-placeholder-count="5">
+        <div style="background:#fff; border:1px solid rgba(20,17,43,0.08); border-radius:18px; overflow:hidden;">
+          <div onClick="{{ faq.toggle }}" style="padding:20px 24px; display:flex; align-items:center; justify-content:space-between; cursor:pointer;">
+            <span style="font-size:15px; font-weight:700; color:#151129;">{{ faq.q }}</span>
+            <span style="font-size:18px; color:#6E5EF0; transform:{{ faq.rotate }}; transition:transform 0.2s;">+</span>
+          </div>
+          <sc-if value="{{ faq.open }}">
+            <div style="padding:0 24px 22px; font-size:14px; line-height:1.7; color:#6B6580;">{{ faq.a }}</div>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ================= FINAL CTA ================= -->
+  <section data-lumi="celebrating" data-lumi-msg="Let's gooo! Your journey starts here ✦" style="padding:0 32px 110px; max-width:1240px; margin:0 auto;">
+    <div style="background:linear-gradient(135deg,#6E5EF0,#4B3ADB); border-radius:32px; padding:72px; display:flex; align-items:center; justify-content:space-between; gap:40px; position:relative; overflow:hidden;" class="dc-finalcta-grid">
+      <div style="position:relative; z-index:1;">
+        <h2 style="font-family:'Sora',sans-serif; font-size:36px; font-weight:800; letter-spacing:-0.02em; margin:0 0 14px; color:#fff; max-width:420px;">Your next skill is one journey away.</h2>
+        <p style="font-size:16px; color:#DCD6FA; margin:0 0 28px; max-width:400px;">Join for free — Lumi will help you pick where to start.</p>
+        <a href="#" style="display:inline-block; font-size:15.5px; font-weight:700; color:#4B3ADB; background:#fff; padding:16px 30px; border-radius:100px; white-space:nowrap;">Start Learning →</a>
+      </div>
+      <div style="position:relative; z-index:1; width:240px; height:240px; flex-shrink:0; display:flex; align-items:center; justify-content:center;" class="dc-finalcta-mascot">
+        <div id="lumi-dock-slot" style="width:220px; height:220px;"></div>
+        <div class="dc-lumi-hero-fallback" style="display:none; position:absolute; inset:0; align-items:center; justify-content:center;">
+          <x-import component-from-global-scope="lumi-mascot-3d" from="./lumi3d.js" variant="balanced" expression="celebrating" size="200" hint-size="200px,200px"></x-import>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer style="padding:64px 32px 40px; border-top:1px solid rgba(20,17,43,0.07);">
+    <div style="max-width:1240px; margin:0 auto;">
+      <div style="display:grid; grid-template-columns:1.4fr repeat(4,1fr); gap:32px; margin-bottom:48px;" class="dc-footer-grid">
+        <div>
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
+            <div style="width:34px; height:34px; border-radius:10px; background:linear-gradient(145deg,#8479F2,#5C4CE0); display:flex; align-items:center; justify-content:center;">
+              <x-import component-from-global-scope="lumi-mascot-3d" from="./lumi3d.js" mode="mark" variant="balanced" size="26" halo="off" hint-size="26px,26px"></x-import>
+            </div>
+            <span style="font-family:'Sora',sans-serif; font-weight:700; font-size:16.5px; color:#151129;">BrightPath AI</span>
+          </div>
+          <p style="font-size:13.5px; color:#847E97; line-height:1.6; max-width:240px;">An AI-powered learning platform for curious minds — guided journeys, real skills, one friendly companion.</p>
+        </div>
+        <sc-for list="{{ footerColumns }}" as="col" hint-placeholder-count="4">
+          <div>
+            <div style="font-size:13px; font-weight:800; color:#151129; margin-bottom:16px;">{{ col.title }}</div>
+            <div style="display:flex; flex-direction:column; gap:11px;">
+              <sc-for list="{{ col.links }}" as="link" hint-placeholder-count="4">
+                <a href="#" style="font-size:13.5px; color:#847E97; font-weight:500;">{{ link }}</a>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="display:flex; align-items:center; justify-content:space-between; padding-top:28px; border-top:1px solid rgba(20,17,43,0.07); flex-wrap:wrap; gap:12px;">
+        <span style="font-size:12.5px; color:#9992AB;">© 2026 BrightPath AI. All rights reserved.</span>
+        <span style="font-size:12.5px; color:#9992AB;">Made with a friendly AI companion, for learners everywhere.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= AI TUTOR CHAT (opens above the flying companion) ================= -->
+  <sc-if value="{{ tutorOpen }}">
+    <div class="dc-lumi-companion" style="position:fixed; left:{{ chatX }}px; top:{{ chatY }}px; z-index:95;">
+      <div style="position:absolute; bottom:0; left:0; width:320px; background:#fff; border-radius:22px; box-shadow:0 24px 60px rgba(20,17,43,0.25); overflow:hidden; border:1px solid rgba(20,17,43,0.06);">
+        <div style="background:#151129; padding:16px 18px; display:flex; align-items:center; gap:10px;">
+          <div style="width:38px; height:38px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <x-import component-from-global-scope="lumi-mascot-3d" from="./lumi3d.js" mode="mark" variant="balanced" size="34" halo="off" hint-size="34px,34px"></x-import>
+          </div>
+          <div style="flex:1;">
+            <div style="font-size:13.5px; font-weight:700; color:#fff;">Lumi</div>
+            <div style="font-size:11px; color:#8DE9C0;">Ready to help</div>
+          </div>
+          <div onClick="{{ closeTutor }}" style="width:26px; height:26px; border-radius:50%; background:rgba(255,255,255,0.1); color:#fff; display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:14px;">✕</div>
+        </div>
+        <div style="padding:18px; display:flex; flex-direction:column; gap:12px;">
+          <div style="background:#F1EEFC; color:#3A3550; padding:11px 14px; border-radius:14px 14px 14px 4px; font-size:13px; line-height:1.5;">Hey! I'm Lumi ✦ Ask me anything about a lesson, or try a quick action below.</div>
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <sc-for list="{{ quickActions }}" as="qa2" hint-placeholder-count="4">
+              <div style="background:#FAFAFB; border:1px solid rgba(20,17,43,0.08); color:#4B3ADB; font-size:12px; font-weight:700; padding:7px 12px; border-radius:100px;">{{ qa2 }}</div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {
+    tutorOpen: false,
+    faqOpen: 0,
+    chatX: 120,
+    chatY: 400,
+  };
+
+  componentDidMount() {
+    this._lastY = window.scrollY;
+    this._rot = 0;
+    this._vel = 0;
+    this._expr = '';
+    this._bubbleTimer = null;
+
+    // Build the flying companion OUTSIDE the DC-managed tree so per-frame
+    // style writes never touch runtime-observed nodes.
+    const host = document.createElement('div');
+    host.className = 'dc-lumi-companion';
+    host.title = 'Chat with Lumi';
+    host.style.cssText = 'position:fixed;left:0;top:0;z-index:90;cursor:pointer;will-change:transform;width:360px;height:360px;transform-origin:top left;transform:translate(-400px,-400px);';
+    const lumi = document.createElement('lumi-mascot-3d');
+    lumi.setAttribute('variant', 'balanced');
+    lumi.setAttribute('expression', 'happy');
+    lumi.setAttribute('size', '360');
+    lumi.setAttribute('shadow', 'off');
+    host.appendChild(lumi);
+    host.addEventListener('click', () => {
+      const size = 360 * (this._s || 0.27);
+      const x = Math.min(Math.max(10, this._x || 26), window.innerWidth - 340);
+      const y = Math.max(10, (this._y || 200) - 6);
+      this.setState({ tutorOpen: true, chatX: x + size * 0.7, chatY: y });
+    });
+    const bubble = document.createElement('div');
+    bubble.className = 'dc-lumi-companion';
+    bubble.style.cssText = 'position:fixed;left:0;top:0;z-index:91;pointer-events:none;background:#fff;border:1px solid rgba(20,17,43,0.08);border-radius:14px 14px 14px 4px;padding:9px 14px;font-family:\'Plus Jakarta Sans\',sans-serif;font-size:12.5px;font-weight:700;color:#4B3ADB;box-shadow:0 10px 24px rgba(20,17,43,0.16);white-space:nowrap;opacity:0;transition:opacity 0.35s;will-change:transform;transform:translate(-400px,-400px);';
+    document.body.appendChild(host);
+    document.body.appendChild(bubble);
+    this._host = host;
+    this._lumiEl = lumi;
+    this._bubbleEl = bubble;
+    this._raf = requestAnimationFrame((t) => this._companionTick(t));
+  }
+
+  componentWillUnmount() {
+    cancelAnimationFrame(this._raf);
+    clearTimeout(this._bubbleTimer);
+    if (this._host) this._host.remove();
+    if (this._bubbleEl) this._bubbleEl.remove();
+  }
+
+  _measure() {
+    const sy = window.scrollY;
+    const abs = (el) => { const r = el.getBoundingClientRect(); return { top: r.top + sy, left: r.left, width: r.width, bottom: r.bottom + sy }; };
+    const heroSlot = document.getElementById('lumi-hero-slot');
+    const dockSlot = document.getElementById('lumi-dock-slot');
+    this._geo = {
+      hero: heroSlot ? abs(heroSlot) : null,
+      dock: dockSlot ? abs(dockSlot) : null,
+      sections: Array.from(document.querySelectorAll('[data-lumi]')).map(s => {
+        const a = abs(s);
+        return { top: a.top, bottom: a.bottom, expr: s.getAttribute('data-lumi'), msg: s.getAttribute('data-lumi-msg') || '' };
+      }),
+      maxScroll: Math.max(1, document.documentElement.scrollHeight - window.innerHeight),
+    };
+  }
+
+  _companionTick(tsNow) {
+    this._raf = requestAnimationFrame((t) => this._companionTick(t));
+    // throttle to ~30fps — plenty smooth for this easing-based motion
+    if (this._lastTick && tsNow - this._lastTick < 32) return;
+    this._lastTick = tsNow;
+
+    const el = this._host;
+    if (!el) return;
+    const vh = window.innerHeight;
+
+    const now = Date.now();
+    if (!this._geo || now - (this._geoAt || 0) > 500) { this._measure(); this._geoAt = now; }
+    const geo = this._geo;
+
+    const sy = window.scrollY;
+    const dv = sy - this._lastY;
+    this._lastY = sy;
+    this._vel = this._vel * 0.88 + dv * 0.12;
+
+    const prog = Math.min(1, Math.max(0, sy / geo.maxScroll));
+    let mode = 'follow';
+    let tx = 26, ty = vh * (0.14 + prog * 0.55), ts = 96 / 360;
+    if (geo.hero && (geo.hero.bottom - sy) > vh * 0.45) { mode = 'hero'; tx = geo.hero.left; ty = geo.hero.top - sy; ts = geo.hero.width / 360; }
+    if (geo.dock && (geo.dock.top - sy) < vh * 0.85) { mode = 'dock'; tx = geo.dock.left; ty = geo.dock.top - sy; ts = geo.dock.width / 360; }
+    if (this.state.tutorOpen && mode === 'follow') ty = Math.max(ty, 360);
+    this._mode = mode;
+
+    if (this._x === undefined) { this._x = tx; this._y = ty; this._s = ts; }
+    this._x += (tx - this._x) * 0.14;
+    this._y += (ty - this._y) * 0.14;
+    this._s += (ts - this._s) * 0.16;
+
+    const rotTarget = (mode === 'follow' && !this.state.tutorOpen) ? Math.max(-18, Math.min(18, this._vel * 0.9)) : 0;
+    this._rot += (rotTarget - this._rot) * 0.14;
+    const bobAmp = mode === 'dock' ? 0 : (mode === 'hero' ? 9 : 6);
+    const bob = Math.sin(now / 650) * bobAmp;
+    const sway = mode === 'follow' ? Math.sin(now / 1100) * 5 : 0;
+    const x = this._x + sway, y = this._y + bob;
+    el.style.transform = 'translate(' + x + 'px,' + y + 'px) rotate(' + this._rot + 'deg) scale(' + this._s + ')';
+    if (this._bubbleEl) this._bubbleEl.style.transform = 'translate(' + (x + 360 * this._s + 10) + 'px,' + (y + 6) + 'px)';
+
+    let expr = 'idle', msg = '';
+    if (mode === 'hero') {
+      expr = 'happy';
+    } else if (mode === 'dock') {
+      expr = 'celebrating';
+    } else {
+      const mid = sy + vh * 0.5;
+      for (const s of geo.sections) {
+        if (s.top <= mid && s.bottom >= mid) { expr = s.expr; msg = s.msg; break; }
+      }
+      if (Math.abs(this._vel) > 34) expr = 'loading';
+    }
+
+    if (expr !== this._expr && now - (this._exprAt || 0) > 350) {
+      this._expr = expr;
+      this._exprAt = now;
+      if (this._lumiEl) this._lumiEl.setAttribute('expression', expr);
+      const bubble = this._bubbleEl;
+      if (bubble && msg) {
+        bubble.textContent = msg;
+        bubble.style.opacity = '1';
+        clearTimeout(this._bubbleTimer);
+        this._bubbleTimer = setTimeout(() => { bubble.style.opacity = '0'; }, 2200);
+      }
+    }
+  }
+
+  toggleFaq(i) {
+    this.setState(s => ({ faqOpen: s.faqOpen === i ? -1 : i }));
+  }
+
+  renderVals() {
+    const faqData = [
+      { q: "Is BrightPath AI safe for kids and teens?", a: "Yes — every AI conversation is age-appropriate, moderated, and designed to encourage learning rather than just give answers. Parents can see a summary of AI tutor activity anytime." },
+      { q: "How is this different from a regular online course platform?", a: "BrightPath pairs structured learning journeys with Lumi, an always-on AI tutor that explains, hints, and adapts to how you're doing — not just pre-recorded videos." },
+      { q: "Can parents and teachers see my progress?", a: "Learners get full control over their own journey. Parents and teachers linked to an account see friendly, plain-language progress summaries — not a play-by-play of every click." },
+      { q: "Do I need to know anything about AI to use it?", a: "Not at all. Lumi is built right into every lesson — you just ask questions naturally, the same way you'd ask a helpful friend." },
+      { q: "What devices does BrightPath AI work on?", a: "BrightPath works in any modern browser on laptop, tablet, or phone, so you can pick up a journey wherever you left off." },
+    ];
+
+    return {
+      tutorOpen: this.state.tutorOpen,
+      chatX: this.state.chatX,
+      chatY: this.state.chatY,
+      closeTutor: (e) => { if (e && e.stopPropagation) e.stopPropagation(); this.setState({ tutorOpen: false }); },
+
+      trustLogos: ["Northwind Academy", "Riverbend High", "Maple & Co Families", "Coastline Learners", "Junction Prep"],
+
+      journeySteps: [
+        { icon: "🎯", label: "Pick a goal — from AI literacy to public speaking", bg: "#F1EEFC" },
+        { icon: "🧩", label: "Follow bite-sized lessons, in order, at your pace", bg: "#FFF1D6" },
+        { icon: "🏁", label: "Hit checkpoints, quizzes, and real milestones", bg: "#E6F7EE" },
+      ],
+
+      journeyNodes: [
+        { mark: "✓", tag: "Module 01", title: "What is AI, really?", done: "#6E5EF0", hasLine: true },
+        { mark: "✓", tag: "Module 02", title: "Prompting basics", done: "#6E5EF0", hasLine: true },
+        { mark: "3", tag: "Module 03", title: "Spotting AI bias", done: "#FF6F59", hasLine: true },
+        { mark: "4", tag: "Module 04", title: "Build a mini AI project", done: "#D8D2E8", hasLine: false },
+      ],
+
+      tutorFeatures: [
+        "Explains concepts in plain, friendly language",
+        "Gives hints first — answers only when you're really stuck",
+        "Knows exactly which lesson you're on",
+        "Adjusts tone and pace to how you're doing",
+      ],
+
+      quickActions: ["Explain this simply", "Give me a hint", "Quiz me", "Summarize this"],
+
+      lessonFormats: [
+        { icon: "🎬", title: "Watch & do", desc: "Short videos paired with an in-the-moment activity, not a 20-minute lecture.", bg: "#F1EEFC" },
+        { icon: "🧠", title: "Try it live", desc: "Interactive exercises — sort, drag, build — so ideas stick through doing.", bg: "#FFF1D6" },
+        { icon: "⚡", title: "Quick checks", desc: "Fast knowledge checks after every lesson to lock in what you learned.", bg: "#E6F7EE" },
+      ],
+
+      parentFeatures: [
+        "Weekly progress summary in plain language",
+        "See time spent, streaks, and quiz performance",
+        "Understand what the AI tutor has been helping with",
+        "Get suggested next steps, not just raw data",
+      ],
+
+      benefits: [
+        { icon: "🧭", title: "Guided, not overwhelming", desc: "One clear next step at all times, never a wall of options." },
+        { icon: "🤝", title: "Always-on support", desc: "Lumi is there at 2pm or 2am — no waiting for office hours." },
+        { icon: "🎮", title: "Genuinely motivating", desc: "XP, streaks, and milestones that reward showing up." },
+        { icon: "🌍", title: "Real-world skills", desc: "Money, AI, communication — the stuff school often skips." },
+      ],
+
+      courses: [
+        { category: "AI & Digital Literacy", title: "Prompting 101: Talk to AI Like a Pro", level: "Beginner", duration: "2h 10m", icon: "🤖", bg: "#EDE9FE" },
+        { category: "Financial Literacy", title: "Budgeting Basics: Your First Paycheck", level: "Beginner", duration: "1h 40m", icon: "💰", bg: "#FFF1D6" },
+        { category: "Entrepreneurship", title: "From Idea to Pitch in 5 Days", level: "Intermediate", duration: "3h 05m", icon: "🚀", bg: "#FFE4DC" },
+        { category: "Creativity", title: "Worldbuilding for Storytellers", level: "Beginner", duration: "2h 20m", icon: "🎨", bg: "#E6F7EE" },
+        { category: "Problem Solving", title: "Think Like a Detective", level: "Intermediate", duration: "2h 45m", icon: "🔍", bg: "#EAF1FE" },
+        { category: "Sustainability", title: "Design a Greener Neighborhood", level: "Intermediate", duration: "2h 30m", icon: "🌱", bg: "#E6F7EE" },
+        { category: "Communication Skills", title: "Public Speaking Without the Sweat", level: "Beginner", duration: "1h 55m", icon: "🎤", bg: "#FFF1D6" },
+        { category: "Coding Basics", title: "Build Your First Website", level: "Beginner", duration: "3h 30m", icon: "💻", bg: "#EDE9FE" },
+      ],
+
+      testimonials: [
+        { quote: "Lumi actually explains things the way my friends would, not like a textbook. I finally get compound interest.", name: "Maya R.", role: "Age 15, Learner", initials: "MR", avatarBg: "#6E5EF0" },
+        { quote: "As a parent I don't have to hover — the weekly summary tells me exactly what she's been working on.", name: "David O.", role: "Parent", initials: "DO", avatarBg: "#FF6F59" },
+        { quote: "I use BrightPath to assign extra practice. The AI tutor usage summary is genuinely useful for check-ins.", name: "Priya N.", role: "Teacher", initials: "PN", avatarBg: "#2FA671" },
+      ],
+
+      plans: [
+        { name: "Explorer", price: "Free", period: "/forever", tagline: "Get a feel for guided learning.", bg: "#fff", border: "1px solid rgba(20,17,43,0.08)", textColor: "#151129", subColor: "#847E97", popular: false, features: ["2 learning journeys", "Limited AI tutor chats", "Basic progress tracking"], btnBg: "#F1EEFC", btnColor: "#4B3ADB", cta: "Start Free" },
+        { name: "Plus", price: "$12", period: "/month", tagline: "For learners going all in.", bg: "#151129", border: "none", textColor: "#fff", subColor: "#B8AEFF", popular: true, features: ["All learning journeys", "Unlimited AI tutor", "Full progress & achievements", "Certificates on completion"], btnBg: "#fff", btnColor: "#151129", cta: "Start Plus" },
+        { name: "Family", price: "$24", period: "/month", tagline: "Up to 4 learners + parent view.", bg: "#fff", border: "1px solid rgba(20,17,43,0.08)", textColor: "#151129", subColor: "#847E97", popular: false, features: ["Everything in Plus", "4 learner profiles", "Parent insights dashboard", "Priority support"], btnBg: "#F1EEFC", btnColor: "#4B3ADB", cta: "Start Family" },
+      ],
+
+      faqs: faqData.map((f, i) => ({
+        q: f.q,
+        a: f.a,
+        open: this.state.faqOpen === i,
+        rotate: this.state.faqOpen === i ? "rotate(45deg)" : "rotate(0deg)",
+        toggle: () => this.toggleFaq(i),
+      })),
+
+      footerColumns: [
+        { title: "Product", links: ["Courses", "AI Tutor", "Journeys", "Pricing"] },
+        { title: "Company", links: ["About", "Careers", "Blog"] },
+        { title: "For", links: ["Learners", "Parents", "Teachers"] },
+        { title: "Support", links: ["Help Center", "Safety", "Contact"] },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>
