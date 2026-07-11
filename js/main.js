@@ -27,7 +27,7 @@
 
   var host = document.createElement('div');
   host.className = 'lumi-companion';
-  host.title = 'Chat with Lumi';
+  host.title = 'Συνομιλία με τη Lumi';
   var lumiEl = document.createElement('lumi-mascot-3d');
   lumiEl.setAttribute('variant', 'balanced');
   lumiEl.setAttribute('expression', 'happy');
